@@ -1,17 +1,11 @@
-import { Pokemon, PokemonInfo } from '../interfaces/reqRes_PokeApi';
+import { Pokemon } from '../interfaces/reqRes_PokeApi';
 
-import { useState } from 'react';
-import { pokemonApi } from '../api/poke-api';
-import { useEffect } from 'react';
 import { usePokemonInfo } from '../hooks/usePokemonInfo';
 
 export const Tarjeta = (props: { pokemon: Pokemon }) => {
 
-    const{mostrarInfo, info, mostrarPokemon} = usePokemonInfo(props.pokemon.url);
+    const { mostrarInfo, info, mostrarPokemon, infoPokemon } = usePokemonInfo(props.pokemon.url);
 
-    const infoPokemon = () => {
-        
-    }
 
     return (
         <>
@@ -22,8 +16,8 @@ export const Tarjeta = (props: { pokemon: Pokemon }) => {
 
                     {
                         mostrarInfo &&
-                        // abilities, forms, moves
-                        <p className="card-text"> {JSON.stringify(info, null, 2)}</p>
+                        //  moves
+                        infoPokemon()
                     }
                 </div>
             </div>

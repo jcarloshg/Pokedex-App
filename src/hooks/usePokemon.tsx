@@ -4,10 +4,15 @@ import { pokeApi } from '../api/poke-api';
 import { Pokemon, ReqRes_PokeApi } from '../interfaces/reqRes_PokeApi';
 import { Tarjeta } from '../typescript/Tarjeta';
 
+const NUM_ITEMS_PAG = 10;
+
 export const usePokemon = () => {
 
     const [mostartAlerta, setMostartAlerta] = useState<boolean>(false);
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
+    
+    const [offset, setoffset] = useState(0);
+    const [limit, setlimit] = useState(10);
 
     useEffect(() => {
         cargarPokemons();
@@ -15,7 +20,12 @@ export const usePokemon = () => {
 
     const cargarPokemons = async () => {
 
-        const resp = await pokeApi.get<ReqRes_PokeApi>('/pokemon');
+        const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
+
+        console.log("asdfasdfasd", offset, limit);
+        
+
+        const resp = await pokeApi(url).get<ReqRes_PokeApi>('/pokemon');
         const pokemonsArr = resp.data.results;
 
         if (pokemonsArr.length === 0) {
@@ -24,6 +34,20 @@ export const usePokemon = () => {
             setPokemons(pokemonsArr);
         }
 
+    }
+
+    const siguientePag = () => {
+        setoffset(offset + NUM_ITEMS_PAG);
+        setlimit(limit + NUM_ITEMS_PAG);
+
+        cargarPokemons();
+    }
+
+    const anteriorPag = () => {
+        setoffset(offset - NUM_ITEMS_PAG);
+        setlimit(limit - NUM_ITEMS_PAG);
+
+        cargarPokemons();
     }
 
     const mostartTarjetaPokemon = (pokemon: Pokemon) => {
@@ -35,6 +59,8 @@ export const usePokemon = () => {
     return {
         mostartAlerta,
         pokemons,
-        mostartTarjetaPokemon
+        mostartTarjetaPokemon,
+        siguientePag,
+        anteriorPag
     }
 }
