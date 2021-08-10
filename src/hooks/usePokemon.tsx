@@ -10,7 +10,7 @@ export const usePokemon = () => {
 
     const [mostartAlerta, setMostartAlerta] = useState<boolean>(false);
     const [pokemons, setPokemons] = useState<Pokemon[]>([]);
-    
+
     const [offset, setoffset] = useState(0);
     const [limit, setlimit] = useState(10);
 
@@ -23,7 +23,7 @@ export const usePokemon = () => {
         const url = `https://pokeapi.co/api/v2/pokemon?offset=${offset}&limit=${limit}`;
 
         console.log("asdfasdfasd", offset, limit);
-        
+
 
         const resp = await pokeApi(url).get<ReqRes_PokeApi>('/pokemon');
         const pokemonsArr = resp.data.results;
