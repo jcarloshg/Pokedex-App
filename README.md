@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Pokédex-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Este proyecto lleva [Bootstrap](https://getbootstrap.com/) en su interior. :)
 
-## Available Scripts
+Este proyecto consume un api acerca de los diferentes Pokemones existentes. Muestra una lista de con pequeñas tarjetas con los nombres de los Pokemóns, una lista que es el recurso que obtenemos al consumir el api de [PokeApi](https://pokeapi.co/). \
 
-In the project directory, you can run:
+![pokedex_img_1](/fotos/pokedex_img_1.jpeg) ![pokedex_img_2](/fotos/pokedex_img_2.jpeg)
+
+Una vez que obtemos esa lista podemos paginar en listas de 10 en 10 Pokemóns con botones ubicados en la parte inferiro de la lista. 
+
+![pokedex_img_3](/fotos/pokedex_img_3.jpeg)
+
+Cuando no hay más Pokemones mostrará un mensaje
+
+![pokedex_img_4](/fotos/pokedex_img_4.jpeg)
+
+
+## Comandos del proyecto
+
+En el directorio raiz del proyecto, los comandos que se deben de ejecutar con los sigueintes en el mismo orden
+
+### `npm i`
+
+Este comando hará las instalaciones de los paquetes necesarios para que el proyecto funcione. \
+Intalará paquetes como [react-native](https://github.com/facebook/react-native), [axios](https://www.npmjs.com/package/axios)
 
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Este comando ejecuta la app en modo desarrollador. \
+Abre una vista en el navegador, [http://localhost:3000](http://localhost:3000) (por defecto).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Descripción de los paquetes usados
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este proyecto hace uso de paquetes muy bien conocidos por la comunidad que desarrolla apps webs, PWA con NodeJS, y en genral cualquier persona que haga uso de NodeJS
 
-### `npm run build`
+- [react-native](https://github.com/facebook/react-native) Utilizado para crear la aplicación
+- [axios](https://www.npmjs.com/package/axios) Utilizado para tener una mejor estructura de las peticiones que a la API
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
-
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
 To learn React, check out the [React documentation](https://reactjs.org/).
