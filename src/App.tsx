@@ -1,15 +1,11 @@
-import { Tarjeta } from './typescript/Tarjeta';
 import { Prueba } from './components/Prueba';
-
-
 
 const App = () => {
   return (
     <div className="mt-2">
-      <h1>Poke-Dex</h1>
+      <h1>Pokédex</h1>
       <hr />
-      <Tarjeta/>
-      <Prueba/>
+      <Prueba />
     </div>
   )
 }

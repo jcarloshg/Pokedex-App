@@ -1,21 +1,26 @@
-import { useEffect } from "react"
-import { pokeApi } from "../api/poke-api"
+import { usePokemon } from '../hooks/usePokemon';
 
 export const Prueba = () => {
 
-    useEffect(() => {
-        pokeApi.get('/pokemon')
-            .then(
-                resp => {
-                    console.log(resp.data.results);
-                }
-            )
-            .catch(err => console.log);
-    }, [])
+    const { mostartAlerta, pokemons, mostartTarjetaPokemon } = usePokemon();
 
     return (
         <>
-            <h2>Prueba</h2>
+            <div className="grid">
+                {
+                    // pokemons.map( pokemon => mostartTarjetaPokemon( pokemon ))
+                    pokemons.map(mostartTarjetaPokemon)
+                }
+            </div>
+
+            
+
+            {
+                mostartAlerta &&
+                <div className="alert alert-warning" role="alert">
+                    No hay pokemón D:
+                </div>
+            }
         </>
     )
 }
