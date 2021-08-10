@@ -6,6 +6,7 @@ export const Prueba = () => {
 
     return (
         <>
+
             {
                 // pokemons.map( pokemon => mostartTarjetaPokemon( pokemon ))
                 pokemons.map(mostartTarjetaPokemon)
@@ -26,8 +27,8 @@ export const Prueba = () => {
                 Siguientes
             </button>
 
-            <br/>
-            <br/>
+            <br />
+            <br />
         </>
     )
 }

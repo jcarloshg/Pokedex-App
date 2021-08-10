@@ -30,7 +30,9 @@ export const usePokemon = () => {
 
         if (pokemonsArr.length === 0) {
             setMostartAlerta(true);
+            setPokemons([]);
         } else {
+            setMostartAlerta(false);
             setPokemons(pokemonsArr);
         }
 
