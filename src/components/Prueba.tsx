@@ -6,14 +6,10 @@ export const Prueba = () => {
 
     return (
         <>
-            <div className="grid">
-                {
-                    // pokemons.map( pokemon => mostartTarjetaPokemon( pokemon ))
-                    pokemons.map(mostartTarjetaPokemon)
-                }
-            </div>
-
-            
+            {
+                // pokemons.map( pokemon => mostartTarjetaPokemon( pokemon ))
+                pokemons.map(mostartTarjetaPokemon)
+            }
 
             {
                 mostartAlerta &&
